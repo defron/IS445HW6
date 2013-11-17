@@ -1,16 +1,16 @@
 ﻿@model string
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Task 1 Form";
 }
 
 <h2>Task One</h2>
-@using (Html.BeginForm("FormatPhoneNumber", "Home"))
+<p>format: ##########</p>
+@using (Html.BeginForm("Index", "Home"))
 {
   <label>Please input a phone number:
-  <input type="text" name="inputNumber" id="inputNumber" pattern="[0-9]{10}" value="" maxlength="10" required="required" /></label>
+  <input type="text" name="inputNumber" id="inputNumber" placeholder="1234567890" pattern="[0-9]{10}" value="" maxlength="10" required="required" /></label>
   <input type="submit" name="submit" value="submit" />
 }
-
-
-
+<br />
+<br />

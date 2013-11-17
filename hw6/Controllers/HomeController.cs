@@ -20,30 +20,34 @@ namespace IS445.Controllers
             return View();
         }
 
-        public ActionResult FormatPhoneNumber(string inputNumber)
+        [HttpPost]
+        public ActionResult Index(string inputNumber)
         {
 
             if (string.IsNullOrEmpty(inputNumber) || (inputNumber.Length != 10))
             {
+                //shouldn't be possible anymore
                 return Content("invalid input, please try again");
             }
             else
             {
                 string formatted = formatNumber(inputNumber);
-                return View((object)formatted);
+                return View("FormatPhoneNumber", (object)formatted);
             }
         }
 
-        public ActionResult StringReversal(string inputString)
+        [HttpPost]
+        public ActionResult Task2(string inputString)
         {
             if (string.IsNullOrEmpty(inputString))
             {
+                //shouldn't be possible anymore
                 return Content("invalid input, please try again");
             }
             else
             {
                 string reversed = stringReversal(inputString);
-                return View((object)reversed);
+                return View("StringReversal", (object)reversed);
             }
         }
 
@@ -52,6 +56,7 @@ namespace IS445.Controllers
         {
             return "formated number is: (" + inputNumber.Substring(0, 3) + ") " + inputNumber.Substring(3, 3) + "-" + inputNumber.Substring(6, 4);
         }
+
         private string stringReversal(string input)
         {
             string[] words = input.Split(' ');

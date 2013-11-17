@@ -1,16 +1,15 @@
 ﻿@model string
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Task 2 Form";
 }
 
 <h2>Task Two</h2>
-@using (Html.BeginForm("StringReversal", "Home"))
+@using (Html.BeginForm("Task2", "Home"))
 {
   <label>Please input a line of text:
   <input type="text" name="inputString" id="inputString" value="" required="required" /></label>
   <input type="submit" name="submit" value="submit" />
 }
-
-
-
+<br />
+<br />
